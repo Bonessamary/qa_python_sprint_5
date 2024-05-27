@@ -7,8 +7,6 @@ class TestingGoProfile:
     # Переход со стартовой страницы в личный кабинет
     def test_go_profile_start(self, webdriver_chrome):
 
-        webdriver_chrome.get(data.website)
-
         # Найди кнопку "Личный кабинет" и кликни по ней
         webdriver_chrome.find_element(*TestLocators.BUTTON_PERSONAL_ACCOUNT).click()
 
@@ -18,12 +16,8 @@ class TestingGoProfile:
         # Проверь, что текущий url равен 'https://stellarburgers.nomoreparties.site/login'
         assert webdriver_chrome.current_url == 'https://stellarburgers.nomoreparties.site/login'
 
-        webdriver_chrome.quit()
-
     # Переход со стартовой страницы в личный кабинет зарегистрированного пользователя
     def test_go_profile_start_registered(self, webdriver_chrome):
-
-        webdriver_chrome.get(data.website)
 
         # Найди кнопку "Личный кабинет" и кликни по ней
         webdriver_chrome.find_element(*TestLocators.BUTTON_PERSONAL_ACCOUNT).click()
@@ -45,5 +39,3 @@ class TestingGoProfile:
 
         # Проверь, что текущий url равен 'https://stellarburgers.nomoreparties.site/account/profile'
         assert webdriver_chrome.current_url == 'https://stellarburgers.nomoreparties.site/account/profile'
-
-        webdriver_chrome.quit()

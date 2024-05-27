@@ -6,7 +6,6 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 class TestingRegistration:
     def test_registration(self, webdriver_chrome):
-        webdriver_chrome.get(data.website)
 
         # Найди кнопку "Личный кабинет" и кликни по ней
         webdriver_chrome.find_element(*TestLocators.BUTTON_PERSONAL_ACCOUNT).click()
@@ -32,10 +31,7 @@ class TestingRegistration:
         # Проверь, что текущий url равен 'https://stellarburgers.nomoreparties.site/login'
         assert webdriver_chrome.current_url == 'https://stellarburgers.nomoreparties.site/login'
 
-        webdriver_chrome.quit()
-
     def test_registration_error(self, webdriver_chrome):
-        webdriver_chrome.get(data.website)
 
         # Найди кнопку "Личный кабинет" и кликни по ней
         webdriver_chrome.find_element(*TestLocators.BUTTON_PERSONAL_ACCOUNT).click()
@@ -57,5 +53,3 @@ class TestingRegistration:
 
         # Проверить ошибку для некорректного пароля
         assert webdriver_chrome.find_element(*TestLocators.TEXT_INVALID_PASSWORD).text == 'Некорректный пароль'
-
-        webdriver_chrome.quit()

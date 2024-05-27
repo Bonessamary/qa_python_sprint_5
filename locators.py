@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
 class TestLocators:
-    NAME = By.XPATH, ".//fieldset[1]/div/div/input"
+    NAME = By.XPATH, "//label[text() = 'Имя']/following-sibling::input"
     EMAIL = By.XPATH, ".//*[text()='Email']/following-sibling::input"
     PASSWORD = By.XPATH, ".//*[text()='Пароль']/following-sibling::input"
 

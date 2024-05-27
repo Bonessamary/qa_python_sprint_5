@@ -6,7 +6,6 @@ from selenium.webdriver.support.wait import WebDriverWait
 class TestingGoProfileToConstructor:
     # Переход из личного кабинета в конструктор
     def test_go_profile_to_constructor(self, webdriver_chrome):
-        webdriver_chrome.get(data.website)
 
         # Найди кнопку "Личный кабинет" и кликни по ней
         webdriver_chrome.find_element(*TestLocators.BUTTON_PERSONAL_ACCOUNT).click()
@@ -32,11 +31,8 @@ class TestingGoProfileToConstructor:
         # Проверь, что текущий url равен 'https://stellarburgers.nomoreparties.site/'
         assert webdriver_chrome.current_url == 'https://stellarburgers.nomoreparties.site/'
 
-        webdriver_chrome.quit()
-
     # Переход из личного кабинета по лого
     def test_go_profile_to_logo(self, webdriver_chrome):
-        webdriver_chrome.get(data.website)
 
         # Найди кнопку "Личный кабинет" и кликни по ней
         webdriver_chrome.find_element(*TestLocators.BUTTON_PERSONAL_ACCOUNT).click()
@@ -61,7 +57,3 @@ class TestingGoProfileToConstructor:
 
         # Проверь, что текущий url равен 'https://stellarburgers.nomoreparties.site/'
         assert webdriver_chrome.current_url == 'https://stellarburgers.nomoreparties.site/'
-
-        webdriver_chrome.quit()
-
-

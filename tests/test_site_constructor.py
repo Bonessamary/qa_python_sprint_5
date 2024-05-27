@@ -6,7 +6,6 @@ from selenium.webdriver.support.wait import WebDriverWait
 class TestingSiteConstructor:
     # Переход на соусы
     def test_constructor_sauces(self, webdriver_chrome):
-        webdriver_chrome.get(data.website)
 
         # Найди кнопку "Личный кабинет" и кликни по ней
         webdriver_chrome.find_element(*TestLocators.BUTTON_PERSONAL_ACCOUNT).click()
@@ -30,11 +29,8 @@ class TestingSiteConstructor:
         sauces = webdriver_chrome.find_element(*TestLocators.SITE_SAUCES)
         assert 'type_current' in sauces.get_attribute('class')
 
-        webdriver_chrome.quit()
-
     # Переход на начинки
     def test_constructor_topping(self, webdriver_chrome):
-        webdriver_chrome.get(data.website)
 
         # Найди кнопку "Личный кабинет" и кликни по ней
         webdriver_chrome.find_element(*TestLocators.BUTTON_PERSONAL_ACCOUNT).click()
@@ -58,11 +54,8 @@ class TestingSiteConstructor:
         topping = webdriver_chrome.find_element(*TestLocators.SITE_TOPPING)
         assert 'type_current' in topping.get_attribute('class')
 
-        webdriver_chrome.quit()
-
  # Переход на булки
     def test_constructor_buns(self, webdriver_chrome):
-        webdriver_chrome.get(data.website)
 
         # Найди кнопку "Личный кабинет" и кликни по ней
         webdriver_chrome.find_element(*TestLocators.BUTTON_PERSONAL_ACCOUNT).click()
@@ -88,6 +81,3 @@ class TestingSiteConstructor:
         # Проверь, что образились булки
         buns = webdriver_chrome.find_element(*TestLocators.SITE_BUNS)
         assert 'type_current' in buns.get_attribute('class')
-
-        webdriver_chrome.quit()
-

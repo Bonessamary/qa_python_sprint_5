@@ -6,7 +6,6 @@ from selenium.webdriver.support.wait import WebDriverWait
 class TestingExitAccount:
 
     def test_exit_account(self, webdriver_chrome):
-        webdriver_chrome.get(data.website)
 
         # Найди кнопку "Личный кабинет" и кликни по ней
         webdriver_chrome.find_element(*TestLocators.BUTTON_PERSONAL_ACCOUNT).click()
@@ -34,5 +33,3 @@ class TestingExitAccount:
 
         # Проверь, что текущий url равен 'https://stellarburgers.nomoreparties.site/login'
         assert webdriver_chrome.current_url == 'https://stellarburgers.nomoreparties.site/login'
-
-        webdriver_chrome.quit()

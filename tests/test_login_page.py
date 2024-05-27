@@ -6,7 +6,6 @@ from selenium.webdriver.support.wait import WebDriverWait
 class TestingLoginPage:
     # вход по кнопке "Войти в аккаунт" на главной
     def test_login_page_log_account(self, webdriver_chrome):
-        webdriver_chrome.get(data.website)
 
         # Найди кнопку "Войти в аккаунт" и кликни по ней
         webdriver_chrome.find_element(*TestLocators.BUTTON_LOG_ACCOUNT).click()
@@ -27,11 +26,8 @@ class TestingLoginPage:
         # Проверь, что текущий url равен 'https://stellarburgers.nomoreparties.site/'
         assert webdriver_chrome.current_url == 'https://stellarburgers.nomoreparties.site/'
 
-        webdriver_chrome.quit()
-
     # вход через кнопку "личный кабинет"
     def test_login_page_profile(self, webdriver_chrome):
-        webdriver_chrome.get(data.website)
 
         # Найди кнопку "Личный кабинет" и кликни по ней
         webdriver_chrome.find_element(*TestLocators.BUTTON_PERSONAL_ACCOUNT).click()
@@ -51,11 +47,8 @@ class TestingLoginPage:
         # Проверь, что текущий url равен 'https://stellarburgers.nomoreparties.site/'
         assert webdriver_chrome.current_url == 'https://stellarburgers.nomoreparties.site/'
 
-        webdriver_chrome.quit()
-
 # вход через кнопку в форме регистрации
     def test_login_page_registration(self, webdriver_chrome):
-        webdriver_chrome.get(data.website)
 
         # Найди кнопку "Личный кабинет" и кликни по ней
         webdriver_chrome.find_element(*TestLocators.BUTTON_PERSONAL_ACCOUNT).click()
@@ -81,11 +74,8 @@ class TestingLoginPage:
         # Проверь, что текущий url равен 'https://stellarburgers.nomoreparties.site/'
         assert webdriver_chrome.current_url == 'https://stellarburgers.nomoreparties.site/'
 
-        webdriver_chrome.quit()
-
     # вход через кнопку в форме восстановления пароля
     def test_login_page_forgot_password(self, webdriver_chrome):
-        webdriver_chrome.get(data.website)
 
         # Найди кнопку "Личный кабинет" и кликни по ней
         webdriver_chrome.find_element(*TestLocators.BUTTON_PERSONAL_ACCOUNT).click()
@@ -110,5 +100,3 @@ class TestingLoginPage:
 
         # Проверь, что текущий url равен 'https://stellarburgers.nomoreparties.site/'
         assert webdriver_chrome.current_url == 'https://stellarburgers.nomoreparties.site/'
-
-        webdriver_chrome.quit()
